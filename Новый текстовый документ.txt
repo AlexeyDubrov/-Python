@@ -1,0 +1,49 @@
+Задание 1 
+
+RESULT = None
+while True:
+  OPERATION = input("Введите операцию +, -, *, / или 0 для выхода: ")
+  if OPERATION == '0':
+    print("Вы завершили работу. ")
+    break
+  elif OPERATION in('+', '-', '*', '/'):
+    NUM1 = float(input("Введите первое число:  "))
+    NUM2 = float(input("Введите второе число:  "))
+   
+    if OPERATION == '+':
+      RESULT = NUM1 + NUM2 
+      print(RESULT)
+    if OPERATION == '-':
+      RESULT = NUM1 - NUM2
+      print(RESULT)
+    if OPERATION == '*':
+      RESULT = NUM1 * NUM2
+      print(RESULT)
+    if OPERATION == '/':
+      try:
+        RESULT = NUM1 / NUM2
+      except ZeroDivisionError:
+        print("Вы пытаетесь делить на 0, ай-ай-ай!")
+
+      print(RESULT)
+  else:
+    print("Вы ввели недопустимую операцию, повторите ввод.")
+
+
+Задание 2
+
+NUM = int(input("Введите число:  "))
+X = NUM
+EVEN = 0
+ODD = 0
+i = 0
+while X > 0:
+  figure = X % 10
+  if figure % 2 == 0:
+    EVEN += 1
+  else:
+    ODD += 1
+  X = X // 10
+  i += 1
+
+print(f"В числе {NUM} всего {i} цифр, из которых {EVEN} цифр четных, {ODD} нечетных.")
